@@ -11,6 +11,9 @@
 [![HorseRaces](https://img.shields.io/badge/HorseCoin-green.svg?style=flat-square)](https://vk.com/horsecoin)
 [![Я во ВКонтакте](https://img.shields.io/badge/VK-blue.svg?style=flat-square)](https://vk.com/id107832372)
 
+[![CoinGames](https://img.shields.io/badge/CoinGames-yellow.svg?style=flat-square)](https://vk.com/vkcoin_games)
+[![PaperScroll](https://img.shields.io/badge/PaperScroll-green.svg?style=flat-square)](https://vk.com/paper_scroll)
+[![PLAY](https://img.shields.io/badge/PLAY-orange.svg?style=flat-square)](https://vk.com/app7420483)
 
 [Документация PaperScroll API](https://paperscroll.docs.apiary.io)
 
