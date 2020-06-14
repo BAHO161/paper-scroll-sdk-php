@@ -7,7 +7,7 @@
 
 **Полезные ссылки:**
 
-[![DavydovGame](https://img.shields.io/badge/DavydovGame-orange.svg?style=flat-square)](https://vk.com/davydovgame)
+[![DavydovGame](https://img.shields.io/badge/DavydovGame-red.svg?style=flat-square)](https://vk.com/davydovgame)
 [![HorseRaces](https://img.shields.io/badge/HorseCoin-green.svg?style=flat-square)](https://vk.com/horsecoin)
 [![Я во ВКонтакте](https://img.shields.io/badge/VK-blue.svg?style=flat-square)](https://vk.com/id107832372)
 
