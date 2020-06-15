@@ -333,7 +333,7 @@ class PaperScrollClient {
 	}
 
 /**
-* Функция request и requestq используются для запросов к API.
+* Функции request и requestq используются для запросов к API.
 */
 	private function request($method,$body) {
 	$ch = curl_init();
