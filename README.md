@@ -1,9 +1,9 @@
 # PaperScroll SDK для PHP 7.0+
 **PaperScroll SDK для PHP 7.0+** простая реализация методов API PaperScroll
 
-**СЛЕДИТЕ ЗА ОБНОВЛЕНИЯМИ! ТЕКУЩАЯ ВЕРСИЯ: 0.2**
+**СЛЕДИТЕ ЗА ОБНОВЛЕНИЯМИ! ТЕКУЩАЯ ВЕРСИЯ: 0.3**
 
-![PaperScroll PHP](https://img.shields.io/badge/Paper%20Scroll%20PHP-0.2-purple.svg?style=flat-square)
+![PaperScroll PHP](https://img.shields.io/badge/Paper%20Scroll%20PHP-0.3-purple.svg?style=flat-square)
 ![PHP 7.0.0+](https://img.shields.io/badge/PHP-7.0.0+-yellow.svg?style=flat-square)
 ![license: MIT](https://img.shields.io/badge/License-MIT-red.svg)
 
