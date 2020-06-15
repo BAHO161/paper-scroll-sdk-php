@@ -2,7 +2,7 @@
 /**
  * PaperScrollClient
  * @author nikitos42050 (Никита Давыдов) (https://vk.com/id107832372)
- * @version 0.1
+ * @version 0.2
  * @copyright Copyright (c) 2020 DavydovGame
  * @link Официальный репозиторий: https://github.com/nikitos42050/paper-scroll-sdk-php
  * По всем вопросам, можете обращаться ко мне в личные сообщения: https://vk.com/id107832372
@@ -495,6 +495,53 @@ class PaperScrollClient {
 	public function deleteWebhook() {
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, self::API_HOST.'webhooks.delete');
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+	curl_setopt($ch, CURLOPT_POST, TRUE);
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+  	"Content-Type: application/json",
+	"Authorization: Basic ".base64_encode($this->merchant_id.':'.$this->token)));
+	$response = curl_exec($ch);
+	$info = curl_getinfo($ch);
+	$error = curl_error($ch);
+	curl_close($ch);
+	if($error) {
+	return ['status' => false, 'error' => $errno];
+	} else {
+	$response = json_decode($response, true);
+	$check = !isset($response['response']);
+	if($check) {
+	var_dump(['status' => false, 'response' => isset($response['response']) ? $response['response'] : $response]);
+	return ['status' => false, 'response' => isset($response['response']) ? $response['response'] : $response];
+	} else {
+	var_dump(['status' => true, 'response' => $response['response']]);
+	return ['status' => true, 'response' => $response['response']];
+	}
+	}
+	}
+
+/**
+* Функция getLogsWebhook - возвращает информацию о последних 20 ошибках при отправке событий.
+* Вызвать метод можно так: $paperscroll->getLogsWebhook()['response'];
+* ВНИМАНИЕ! Если ошибок нет, то 'response' будет возвращать пустоту.
+* Если ошибка есть, то ответ будет примерно такой: "15.06.2020 08:00:00 — 404 Not found".
+*
+* Готовый варинт:
+* $paperscroll->getLogsWebhook()['response'];
+*
+* Когда 'status' == 'false', то можно получить более подробную информацию о ошибке.
+* Для того, чтобы получить информацию о ошибке, 
+* нужно вызвать метод $paperscroll->getLogsWebhook()['response']['error']['ПАРАМЕТР ОШИБКИ'];
+* Параметры, которые можно получить: error_code || error_msg || error_text
+*
+* Готовый вариант получения ошибки: 
+* $paperscroll->getLogsWebhook()['response']['error']['error_text'];
+*/
+
+	public function getLogsWebhook() {
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL, self::API_HOST.'webhooks.getLogs');
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
