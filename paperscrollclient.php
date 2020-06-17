@@ -2,7 +2,7 @@
 /**
  * PaperScrollClient
  * @author nikitos42050 (Никита Давыдов) (https://vk.com/id107832372)
- * @version 0.3
+ * @version 0.4
  * @copyright Copyright (c) 2020 DavydovGame
  * @link Официальный репозиторий: https://github.com/nikitos42050/paper-scroll-sdk-php
  * По всем вопросам, можете обращаться ко мне в личные сообщения: https://vk.com/id107832372
@@ -103,7 +103,7 @@ class PaperScrollClient {
 
 	public function editMerchant(string $name, int $group_id, string $link) {
 	$body = "{\"name\": \"{$name}\",\"group_id\": {$group_id},\"avatar\": \"{$link}\"}";
-	return $this->request('merchants.get', $body);
+	return $this->request('merchants.edit', $body);
 	}
 
 /**
@@ -333,7 +333,7 @@ class PaperScrollClient {
 	}
 
 /**
-* Функции request и requestq используются для запросов к API.
+* Функция request и requestq используются для запросов к API.
 */
 	private function request($method,$body) {
 	$ch = curl_init();
