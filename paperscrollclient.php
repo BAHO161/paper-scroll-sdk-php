@@ -2,7 +2,7 @@
 /**
  * PaperScrollClient
  * @author nikitos42050 (Никита Давыдов) (https://vk.com/id107832372)
- * @version 0.4
+ * @version 1.0
  * @copyright Copyright (c) 2020 DavydovGame
  * @link Официальный репозиторий: https://github.com/nikitos42050/paper-scroll-sdk-php
  * По всем вопросам, можете обращаться ко мне в личные сообщения: https://vk.com/id107832372
