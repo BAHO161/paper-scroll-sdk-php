@@ -126,7 +126,7 @@ class PaperScrollClient {
 * то 'response' будет возвращать пустоту и 'status' == '2'.
 */
 
-	public function getUsers(int $user_id) {
+	public function getUsers($user_id) {
 	$body = "{\"user_ids\": [{$user_id}]}";
 	return $this->request('users.get', $body);
 	}
@@ -151,7 +151,7 @@ class PaperScrollClient {
 * то 'response' будет возвращать пустоту и 'status' == '2'.
 */
 
-	public function getUsersBalances(int $user_id) {
+	public function getUsersBalances($user_id) {
 	$body = "{\"user_ids\": [{$user_id}]}";
 	return $this->request('users.getBalances', $body);
 	}
@@ -354,13 +354,13 @@ class PaperScrollClient {
 	return ['status' => false, 'error' => $error];
 	} else {
 	$response = json_decode($response, true);
-	$check = !isset($response['response'][0]);
+	$check = !isset($response['response']);
 	if($check) {
-	var_dump(['status' => 2, 'response' => isset($response['response']) ? $response['response'] : $response]);
+	//var_dump(['status' => 2, 'response' => isset($response['response']) ? $response['response'] : $response]);
 	return ['status' => 2, 'response' => isset($response['response']) ? $response['response'] : $response];
 	} else {
-	var_dump(['status' => 1, 'response' => $response['response'][0]]);
-	return ['status' => 1, 'response' => $response['response'][0]];
+	//var_dump(['status' => 1, 'response' => $response['response'][0]]);
+	return ['status' => 1, 'response' => $response['response']];
 	}
 	}
 	}
@@ -385,10 +385,10 @@ class PaperScrollClient {
 	$response = json_decode($response, true);
 	$check = !isset($response['response']);
 	if($check) {
-	var_dump(['status' => 2, 'response' => isset($response['response']) ? $response['response'] : $response]);
+	//var_dump(['status' => 2, 'response' => isset($response['response']) ? $response['response'] : $response]);
 	return ['status' => 2, 'response' => isset($response['response']) ? $response['response'] : $response];
 	} else {
-	var_dump(['status' => 1, 'response' => $response['response']]);
+	//var_dump(['status' => 1, 'response' => $response['response']]);
 	return ['status' => 1, 'response' => $response['response']];
 	}
 	}
